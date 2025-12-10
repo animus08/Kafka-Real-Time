@@ -20,7 +20,6 @@ This pipeline solves this by implementing a **Deterministic Deduplication Strate
     3.  **Analytical:** ClickHouse uses `ReplacingMergeTree` for eventual consistency.
   * **🔑 Deterministic Identity:** Uses `MD5(User + Event + Timestamp)` to generate immutable event IDs.
   * **⚡ Handling Data Skew:** Engineered to handle massive throughput spikes (11k records/sec) followed by idle periods.
-  * **🔄 Fault Tolerance:** Full state recovery via Checkpointing and Write-Ahead Logs (WAL).
 
 -----
 
