@@ -221,6 +221,8 @@ try:
         .option("kafka.bootstrap.servers", KAFKA_BROKER)
         .option("subscribe", INPUT_TOPIC)
         .option("startingOffsets", "earliest")
+        # Limit batch size to 1000 records
+        .option("maxOffsetsPerTrigger", 1000) 
         .option("failOnDataLoss", "false")
         .load()
     )
